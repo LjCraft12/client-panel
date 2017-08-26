@@ -31,7 +31,6 @@ showBalanceUpdateInput: boolean = false;
         this.hasBalance = true;
       }
       this.client = client;
-      console.log(this.client);
     });
   }
   updateBalance(id: string) {
@@ -42,5 +41,15 @@ showBalanceUpdateInput: boolean = false;
       timeout: 2000
     });
     this.router.navigate(['/client/' + this.id]);
+  }
+  onDeleteClick() {
+    if (confirm('Are you sure you want to delete this client?')) {
+      this.clientService.deleteClient(this.id);
+      this.flashMessagesService.show('Client Deleted', {
+        cssClass: 'alert-danger',
+        timeout: 2000
+      });
+      this.router.navigate(['/']);
+    }
   }
 }

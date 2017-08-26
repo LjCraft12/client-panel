@@ -40,7 +40,7 @@ disableBalanceOnAdd: boolean = false;
     } else {
       // Add new client
       this.clientService.newClient(value);
-      this.flashMessagesService.show('New Client added', {
+      this.flashMessagesService.show('New Client added' , {
         cssClass: 'alert-success',
         timeout: 4000,
       });
