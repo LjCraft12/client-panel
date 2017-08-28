@@ -24,15 +24,13 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.email, this.password)
       .then((res) => {
         this.flashMessagesService.show('Login success', {
-          cssClass: 'alert-success',
-          timeout: 1000
+          cssClass: 'alert-success', timeout: 4000
         });
         this.router.navigate(['/']);
       })
       .catch((err) => {
         this.flashMessagesService.show(err.message, {
-          cssClass: 'alert-danger',
-          timeout: 4000
+          cssClass: 'alert-danger', timeout: 4000
         });
         this.router.navigate(['/login']);
       });
